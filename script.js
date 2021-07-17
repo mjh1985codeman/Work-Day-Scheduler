@@ -47,6 +47,10 @@ updateRowColors = function () {
     console.log(presentHour);
     if (timeBlockHour === presentHour) {
       console.log("This Matches!");
+    } else if (timeBlockHour < presentHour) {
+      console.log("This is in the Past!");
+    } else {
+      console.log("That must mean this is the future");
     }
   });
 };
