@@ -45,6 +45,9 @@ updateRowColors = function () {
     var presentHour = moment().hours();
     console.log(timeBlockHour);
     console.log(presentHour);
+    if (timeBlockHour === presentHour) {
+      console.log("This Matches!");
+    }
   });
 };
 //console.log(currentHour);
