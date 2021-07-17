@@ -54,3 +54,12 @@ $("button").click(function () {
 
   console.log(taskTextInput);
 });
+
+// Load Tasks from Local Storage.
+loadTasks = function () {
+  var savedTaskTextInput = localStorage.getItem("taskTextInput");
+
+  console.log(savedTaskTextInput);
+};
+
+loadTasks();
