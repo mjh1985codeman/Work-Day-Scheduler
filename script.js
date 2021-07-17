@@ -3,7 +3,7 @@
 var currentDateTime = moment();
 
 getCurrentDateTime = function () {
-  console.log(currentDateTime);
+  console.log(currentDateTime.format("llll"));
 };
 
 getCurrentDateTime();
