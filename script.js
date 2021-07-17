@@ -22,6 +22,20 @@ var scheduleHourBlocks = document.getElementsByClassName("hour");
 for (var i = 0; i < scheduleHourBlocks.length; i++) {
   var scheduleHourBlocksSplit = scheduleHourBlocks[i].outerText.split(":")[0];
   console.log(scheduleHourBlocksSplit);
+  if (currentHourSplit === scheduleHourBlocksSplit) {
+    console.log("This one Matches");
+    document
+      .getElementsByClassName("description")[0]
+      .classList.removeNamedItem("past");
+    document
+      .getElementsByClassName("description")[0]
+      .classList.removeNamedItem("future");
+    document
+      .getElementsByClassName("description")[0]
+      .classList.setNamedItem("present");
+  } else {
+    console.log("These do not match");
+  }
 }
 // function to color code the rows based on what time it is.
 updateRowColors = function () {
