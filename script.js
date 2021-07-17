@@ -31,7 +31,7 @@ updateRowColors = function () {
 
 displayCurrentDate();
 updateRowColors();
-
+var taskTextInput = [];
 // Trying to figure out how to get all the tasks to be console logged separately.
 $("button").click(function () {
   console.log("you clicked a button");
@@ -46,6 +46,11 @@ $("button").click(function () {
     $("#taskText08").val(),
     $("#taskText09").val(),
   ];
+
+  localStorage.setItem("taskTextInput", JSON.stringify(taskTextInput));
+  // loop over the taskTextInput array and push items to the local storage.
+  // then I neeed to figure out how to get the items from the local storage and push them back to the
+  // page in the proper spot.
 
   console.log(taskTextInput);
 });
