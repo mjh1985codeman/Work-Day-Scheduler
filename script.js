@@ -1,9 +1,11 @@
 // global variables
 
-var currentDateTime = moment();
+var currentDate = moment();
 
-getCurrentDateTime = function () {
-  console.log(currentDateTime.format("llll"));
+// function to get the currentdatetime
+getCurrentDate = function () {
+  document.getElementById("currentDay").innerHTML =
+    currentDate.format("dddd, MMMM Do YYYY");
 };
 
-getCurrentDateTime();
+getCurrentDate();
