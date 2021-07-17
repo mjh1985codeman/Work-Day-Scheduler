@@ -46,10 +46,13 @@ updateRowColors = function () {
     console.log(timeBlockHour);
     console.log(presentHour);
     if (timeBlockHour === presentHour) {
-      console.log("This Matches!");
+      $("textarea").addClass("present");
+      console.log("This is the NOW hour");
     } else if (timeBlockHour < presentHour) {
-      console.log("This is in the Past!");
+      $("textarea").addClass("past");
+      console.log("This is in the past!");
     } else {
+      $("textarea").addClass("future");
       console.log("That must mean this is the future");
     }
   });
