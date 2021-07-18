@@ -32,7 +32,7 @@ updateRowColors = function () {
 displayCurrentDate();
 updateRowColors();
 var taskTextInput = [];
-// Trying to figure out how to get all the tasks to be console logged separately.
+
 $("button").click(function () {
   console.log("you clicked a button");
   var taskTextInput = [
@@ -48,18 +48,35 @@ $("button").click(function () {
   ];
 
   localStorage.setItem("taskTextInput", JSON.stringify(taskTextInput));
-  // loop over the taskTextInput array and push items to the local storage.
-  // then I neeed to figure out how to get the items from the local storage and push them back to the
-  // page in the proper spot.
-
-  console.log(taskTextInput);
 });
 
 // Load Tasks from Local Storage.
 loadTasks = function () {
-  var savedTaskTextInput = localStorage.getItem("taskTextInput");
-
-  console.log(savedTaskTextInput);
+  //console.log(savedTaskTextInput);
+  var loadUserTasks = JSON.parse(localStorage.getItem("taskTextInput"));
+  console.log(loadUserTasks);
+  //Created Variables and linked them to the ElementID "taskText01, 02, 03, etc" and
+  //matched them w/ the corresponding index for loadUserTasks.
+  var storedTaskInputEl = document.getElementById("taskText01");
+  storedTaskInputEl.textContent = loadUserTasks[0];
+  var storedTaskInputEl = document.getElementById("taskText02");
+  storedTaskInputEl.textContent = loadUserTasks[1];
+  var storedTaskInputEl = document.getElementById("taskText03");
+  storedTaskInputEl.textContent = loadUserTasks[2];
+  var storedTaskInputEl = document.getElementById("taskText04");
+  storedTaskInputEl.textContent = loadUserTasks[3];
+  var storedTaskInputEl = document.getElementById("taskText05");
+  storedTaskInputEl.textContent = loadUserTasks[4];
+  var storedTaskInputEl = document.getElementById("taskText06");
+  storedTaskInputEl.textContent = loadUserTasks[5];
+  var storedTaskInputEl = document.getElementById("taskText07");
+  storedTaskInputEl.textContent = loadUserTasks[6];
+  var storedTaskInputEl = document.getElementById("taskText08");
+  storedTaskInputEl.textContent = loadUserTasks[7];
+  var storedTaskInputEl = document.getElementById("taskText09");
+  storedTaskInputEl.textContent = loadUserTasks[8];
 };
 
-loadTasks();
+window.onload = function () {
+  loadTasks();
+};
