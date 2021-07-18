@@ -20,8 +20,8 @@ WHEN I refresh the page
 THEN the saved events persist
 
 # Deployed Screenshot:
-
+[![wrkdaysch-SS.jpg](https://i.postimg.cc/t4RNFHHR/wrkdaysch-SS.jpg)](https://postimg.cc/1fTFZ2tb)
 # Deployed URL: 
-
+https://mjh1985codeman.github.io/Work-Day-Scheduler/
 # GitHub Repo URL:
 https://github.com/mjh1985codeman/Work-Day-Scheduler
