@@ -31,8 +31,9 @@ updateRowColors = function () {
 
 displayCurrentDate();
 updateRowColors();
+//global variable as an empty array to hold the task Text Input.
 var taskTextInput = [];
-
+// button even listener to save the input text from the input text textarea HTML w/ the id of taskText01, 02, etc.
 $("button").click(function () {
   console.log("you clicked a button");
   var taskTextInput = [
@@ -46,17 +47,18 @@ $("button").click(function () {
     $("#taskText08").val(),
     $("#taskText09").val(),
   ];
-
+  // Set the text input to Local Storage.
   localStorage.setItem("taskTextInput", JSON.stringify(taskTextInput));
 });
 
-// Load Tasks from Local Storage.
+// Load Tasks from Local Storage function.
 loadTasks = function () {
-  //console.log(savedTaskTextInput);
+  // variable used to get and store the taskTextInput key values from local storage.
   var loadUserTasks = JSON.parse(localStorage.getItem("taskTextInput"));
+  // console.log to test things because why not?
   console.log(loadUserTasks);
-  //Created Variables and linked them to the ElementID "taskText01, 02, 03, etc" and
-  //matched them w/ the corresponding index for loadUserTasks.
+  //Created storedTaskInputEl Variable and linked them to the ElementID "taskText01, 02, 03, etc" and
+  //matched them w/ the corresponding index for the loadUserTasks.
   var storedTaskInputEl = document.getElementById("taskText01");
   storedTaskInputEl.textContent = loadUserTasks[0];
   var storedTaskInputEl = document.getElementById("taskText02");
@@ -77,6 +79,7 @@ loadTasks = function () {
   storedTaskInputEl.textContent = loadUserTasks[8];
 };
 
+// window onload command to call the loadTasks function upon refresh.
 window.onload = function () {
   loadTasks();
 };
